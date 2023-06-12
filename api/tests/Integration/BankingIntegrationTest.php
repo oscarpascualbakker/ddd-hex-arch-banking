@@ -179,5 +179,16 @@ class BankingIntegrationTest extends TestCase
         echo "--------------------------------------------\n";
 
         parent::tearDown();
+
+        $this->userRepository = null;
+        $this->accountRepository = null;
+        $this->transactionRepository = null;
+
+        $this->createUserService = null;
+        $this->accountService = null;
+        $this->createAccountService = null;
+        $this->depositMoneyService = null;
+        $this->transferMoneyService = null;
+        $this->showAccountDetailsService = null;
     }
 }

@@ -42,23 +42,25 @@ final class Account
         return $transaction;
     }
 
-    public function withdraw(Money $money): void
+    public function withdraw(Money $amount): Transaction
     {
-        if ($this->balance->lessThan($money)) {
+        if ($this->balance->lessThan($amount)) {
             throw new \InvalidArgumentException('Insufficient funds');
         }
 
-        $newAmount = $this->balance->value() - $money->value();
-        $this->balance = new Money($newAmount);
+        $this->balance = $this->balance->subtract($amount);
 
         $transaction = new Transaction(
             new TransactionId(uniqid()),
             $this->accountId,
             null,
-            $money,
+            $amount,
             'withdraw'
         );
-        $this->transactions[] = $transaction;
+
+        $this->addTransaction($transaction);
+
+        return $transaction;
     }
 
     public function addTransaction(Transaction $transaction): void
