@@ -20,6 +20,11 @@ class Money
         return new Money($this->amount + $money->value());
     }
 
+    public function subtract(Money $money): Money
+    {
+        return new Money($this->amount - $money->value());
+    }
+
     public function equals(Money $amount): bool
     {
         return $this->amount === $amount->value();
