@@ -15,7 +15,7 @@ final class User
     private string $email;
     private \DateTimeImmutable $createdAt;
 
-    public function __construct(UserId $userId, string $username, string $password, string $email, \DateTimeImmutable $createdAt)
+    public function __construct(UserId $userId, string $username, string $email, string $password, \DateTimeImmutable $createdAt)
     {
         $this->userId = $userId;
         $this->username = $username;
