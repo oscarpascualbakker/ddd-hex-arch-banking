@@ -14,6 +14,7 @@ RUN pecl install xdebug-3.0.1 && \
     docker-php-ext-enable xdebug
 
 COPY .docker/xdebug/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+COPY .docker/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 WORKDIR /var/www/html/api
 

@@ -31,11 +31,11 @@ Los endpoints generados son los siguientes:
 
 | Tipo | Endpoint | Objetivo |
 |---|---|---|
-| POST | /users | Crear usuario |
-| POST | /accounts | Crear cuenta |
-| POST | /accounts/{accountId}/deposit | Realizar depósito en una cuenta |
-| GET | /accounts/{accountId} | Obtener info de una cuenta |
-| POST | /transfer | Realizar transferencia |
+| POST | /localhost/users | Crear usuario |
+| POST | /localhost/accounts | Crear cuenta |
+| POST | /localhost/accounts/{accountId}/deposit | Realizar depósito en una cuenta |
+| GET | /localhost/accounts/{accountId} | Obtener info de una cuenta |
+| POST | /localhost/transfer | Realizar transferencia |
 
 
 No he generado un entorno de test tipo Swagger UI.
